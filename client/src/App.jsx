@@ -1,5 +1,12 @@
+import Editors from "./Editors";
 function App() {
-  return <h1>hi</h1>;
+  return (
+    <main>
+      <Editors player={1} />
+      <section></section>
+      <Editors player={2} />
+    </main>
+  );
 }
 
 export default App;
