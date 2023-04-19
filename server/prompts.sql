@@ -29,71 +29,56 @@ CREATE TABLE public.prompts (
 -- fill database with all prompts
 INSERT INTO public.prompts (_id, difficulty, prompt, answer)
 VALUES
-    (1, 'easy', 'Write a query to get the population field from the world table for Germany. 
-    Note that strings (pieces of text that are data) should be in single quotes',
+    (1, 'easy', 'Write a query to get the population field from the world table for Germany. Note that strings (pieces of text that are data) should be in single quotes',
     'SELECT population FROM world WHERE name = "Germany";'),
-    (2, 'easy', 'Write a query to get the name and population fields from the world table for 
-    Sweden, Norway, and Denmark', 'SELECT name, population FROM world WHERE name IN 
-    ("Sweden", "Norway", "Denmark");'),
-    (3, 'easy', 'Write a query which selects all countries with a population between 200,000 
-    and 250,000. Show the name and area fields.', 'SELECT name, population FROM world WHERE 
-    population BETWEEN 200000 AND 250000;'),
-    (4, 'average', 'Find all countries that start with the letter "Y".', 'SELECT name 
-    FROM world WHERE name LIKE "Y%";'),
-    (5, 'average', 'Find all countries that end with the letter "y".', 'SELECT name FROM 
-    world WHERE name LIKE "%y";'),
-    (6, 'average', 'Find all countries that contain the letter "x".', 'SELECT name FROM world 
-    WHERE name LIKE "%x%";'),
-    (7, 'average', 'Find all countries that end with "land".', 'SELECT name FROM world 
-    WHERE name LIKE "%land";'),
-    (8, 'average', 'Find all countries that start with "C" and end with "ia".', 'SELECT name 
-    FROM world WHERE name LIKE "C%ia";'),
-    (9, 'average', 'Find all countries that has "oo" in the name.', 'SELECT name FROM world 
-    WHERE name LIKE "%oo%";'),
-    (10, 'average', 'Find all countries that have 3 or more "a" in its name.', 'SELECT name 
-    FROM world WHERE name LIKE "%a%a%a%";'),
-    (11, 'average', 'Find all countries that have "t" as its second letter. Arrange the data 
-    according to name.', 'SELECT name FROM world WHERE name LIKE "_t%" ORDER BY name;'),
-    (12, 'average', 'Find all countries that have 2 "o" character separated by 2 other 
-    characters (ex. Moldova).', 'SELECT name FROM world WHERE name LIKE "%o__o%";'),
-    (13, 'average', 'Find all countries that have exactly 4 characters.', 'SELECT name FROM 
-    world WHERE name LIKE "____";'),
-    (14, 'average', 'Find all countries where the capital city has the same name as the 
-    country.', 'SELECT name FROM world WHERE name = capital;'),
-    (15, 'average', 'Find all countries where the capital is the name of the country plus 
-    "City" (ex. Mexico -> Mexico City).', 'SELECT name FROM world WHERE 
-    capital = concat(name, " City");'),
-    (16, 'average', 'Find the capital and name of countries where the capital includes the 
-    name of the country.', 'SELECT capital,name FROM world WHERE capital LIKE 
-    concat("%", name, "%");'),
-    (17, 'hard', 'Find the capital and the name where the capital is an extension of name 
-    of the country. You should include Mexico City as it is longer than Mexico. You should 
-    not include Luxembourg as the capital is the same as the country.', 'SELECT capital, name 
-    FROM world WHERE capital LIKE concat(name, "%") AND capital <> name;'),
-    (18, 'hard', 'For Monaco-Ville the name is Monaco and the extension is -Ville. Show the 
-    name and the extension where the capital is an extension of name of the country. You can 
-    use the SQL function REPLACE.', 'SELECT name, REPLACE(capital, name, "") FROM world 
-    WHERE capital LIKE concat("%", name, "%") AND capital > name;'),
-    (19, 'easy', 'Write a query to get the name, capital, and population fields from the 
-    world table.', 'SELECT name, capital, population FROM world;'),
+    (2, 'easy', 'Write a query to get the name and population fields from the world table for Sweden, Norway, and Denmark',
+    'SELECT name, population FROM world WHERE name IN ("Sweden", "Norway", "Denmark");'),
+    (3, 'easy', 'Write a query which selects all countries with a population between 200,000 and 250,000. Show the name and area fields.', 
+    'SELECT name, population FROM world WHERE population BETWEEN 200000 AND 250000;'),
+    (4, 'average', 'Find all countries that start with the letter "Y".', 
+    'SELECT name FROM world WHERE name LIKE "Y%";'),
+    (5, 'average', 'Find all countries that end with the letter "y".', 
+    'SELECT name FROM world WHERE name LIKE "%y";'),
+    (6, 'average', 'Find all countries that contain the letter "x".', 
+    'SELECT name FROM world WHERE name LIKE "%x%";'),
+    (7, 'average', 'Find all countries that end with "land".', 
+    'SELECT name FROM world WHERE name LIKE "%land";'),
+    (8, 'average', 'Find all countries that start with "C" and end with "ia".', 
+    'SELECT name FROM world WHERE name LIKE "C%ia";'),
+    (9, 'average', 'Find all countries that has "oo" in the name.', 
+    'SELECT name FROM world WHERE name LIKE "%oo%";'),
+    (10, 'average', 'Find all countries that have 3 or more "a" in its name.', 
+    'SELECT name FROM world WHERE name LIKE "%a%a%a%";'),
+    (11, 'average', 'Find all countries that have "t" as its second letter. Arrange the data according to name.', 
+    'SELECT name FROM world WHERE name LIKE "_t%" ORDER BY name;'),
+    (12, 'average', 'Find all countries that have 2 "o" character separated by 2 other characters (ex. Moldova).', 
+    'SELECT name FROM world WHERE name LIKE "%o__o%";'),
+    (13, 'average', 'Find all countries that have exactly 4 characters.', 
+    'SELECT name FROM world WHERE name LIKE "____";'),
+    (14, 'average', 'Find all countries where the capital city has the same name as the country.', 
+    'SELECT name FROM world WHERE name = capital;'),
+    (15, 'average', 'Find all countries where the capital is the name of the country plus "City" (ex. Mexico -> Mexico City).', 
+    'SELECT name FROM world WHERE capital = concat(name, " City");'),
+    (16, 'average', 'Find the capital and name of countries where the capital includes the name of the country.', 
+    'SELECT capital,name FROM world WHERE capital LIKE concat("%", name, "%");'),
+    (17, 'hard', 'Find the capital and the name where the capital is an extension of name of the country. You should include Mexico City as it is longer than Mexico. You should not include Luxembourg as the capital is the same as the country.', 
+    'SELECT capital, name FROM world WHERE capital LIKE concat(name, "%") AND capital <> name;'),
+    (18, 'hard', 'For Monaco-Ville the name is Monaco and the extension is -Ville. Show the name and the extension where the capital is an extension of name of the country. You can use the SQL function REPLACE.', 
+    'SELECT name, REPLACE(capital, name, "") FROM world WHERE capital LIKE concat("%", name, "%") AND capital > name;'),
+    (19, 'easy', 'Write a query to get the name, capital, and population fields from the world table.', 
+    'SELECT name, capital, population FROM world;'),
     (20, 'easy', 'List each country name where the population is larger than that of "Russia"', 
-    'SELECT name FROM world WHERE population > (SELECT population FROM world 
-    WHERE name="Russia");'),
-    (21, 'average', 'Which country has a population that is more than Canada but less than 
-    Poland? Show the name and the population', 'SELECT name, population FROM world WHERE 
-    population > (SELECT population FROM world WHERE name="Canada") AND population < (SELECT 
-    population FROM world WHERE name="Poland");'),
-    (22, 'hard', 'Show the name and the capital where the first letters of each match. Do not 
-    include countries where the name and the capital are the same word. For example, the capital 
-    of Sweden is Stockholm.', 'SELECT name, capital FROM world 
-    WHERE LEFT(name, 1) = LEFT(capital, 1) AND name != capital;'),
-    (23, 'hard', 'Find the country that has all the vowels and no spaces in its name.', 'SELECT 
-    name FROM world WHERE name LIKE "%a%" AND name LIKE "%e%" AND name LIKE "%i%" AND 
-    name LIKE "%o%" AND name LIKE "%u%" AND name NOT LIKE "% %";'),
+    'SELECT name FROM world WHERE population > (SELECT population FROM world WHERE name="Russia");'),
+    (21, 'average', 'Which country has a population that is more than Canada but less than Poland? Show the name and the population', 
+    'SELECT name, population FROM world WHERE population > (SELECT population FROM world WHERE name="Canada") AND population < (SELECT population FROM world WHERE name="Poland");'),
+    (22, 'hard', 'Show the name and the capital where the first letters of each match. Do not include countries where the name and the capital are the same word. For example, the capital of Sweden is Stockholm.', 
+    'SELECT name, capital FROM world WHERE LEFT(name, 1) = LEFT(capital, 1) AND name != capital;'),
+    (23, 'hard', 'Find the country that has all the vowels and no spaces in its name.', 
+    'SELECT name FROM world WHERE name LIKE "%a%" AND name LIKE "%e%" AND name LIKE "%i%" AND name LIKE "%o%" AND name LIKE "%u%" AND name NOT LIKE "% %";'),
     (24, 'easy', 'What is the total population of Estonia, Latvia, Lithuania?', 
     'SELECT SUM(population) FROM world WHERE name IN ("Estonia","Latvia","Lithuania");'),
-    (25, 'easy', 'What is the average population of Poland, Germany and Denmark?', 'SELECT 
-    AVG(population) FROM world WHERE name IN ("Poland", "Germany", "Denmark");');
+    (25, 'easy', 'What is the average population of Poland, Germany and Denmark?', 
+    'SELECT AVG(population) FROM world WHERE name IN ("Poland", "Germany", "Denmark");');
 
 -- query for public.world
 CREATE TABLE public.world (
