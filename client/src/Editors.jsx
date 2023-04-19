@@ -11,8 +11,9 @@ export default function Editors({ player }) {
 
   const submitOperation = async () => {
     console.log(editorRef.current.getValue());
+    const operation = editorRef.current.getValue();
     try {
-      const response = await axios.get("/api/");
+      const response = await axios.post("/api/operation", { operation });
       console.log(response);
     } catch (e) {
       console.log("error: ", e);
@@ -29,7 +30,6 @@ export default function Editors({ player }) {
         defaultLanguage="pgsql"
         theme="vs-dark"
         onMount={handleEditorDidMount}
-        // defaultValue="// some comment"
       />
       <button onClick={submitOperation}> Submit </button>
       <h3>Response</h3>
@@ -38,7 +38,6 @@ export default function Editors({ player }) {
         width="350px"
         defaultLanguage="json"
         theme="vs-dark"
-        // defaultValue="// some comment"
       />
     </section>
   );
