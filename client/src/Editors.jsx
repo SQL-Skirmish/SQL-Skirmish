@@ -26,14 +26,10 @@ export default function Editors({ player }) {
   };
 
   const submitOperation = async () => {
-    console.log(editorRef.current.getValue());
     const operation = editorRef.current.getValue();
     try {
-      const response = await axios.post("/api/operation", { operation });
-      console.log(response);
-      responseRef.current.setValue(
-        JSON.stringify(response.data.response, null, 2)
-      );
+      const { data } = await axios.post("/api/operation", { operation });
+      responseRef.current.setValue(JSON.stringify(data.response, null, 2));
     } catch (e) {
       console.log("error: ", e);
     }
