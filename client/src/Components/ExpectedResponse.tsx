@@ -11,8 +11,8 @@ export default function ExpectedResponse({ answer }) {
   };
 
   useEffect(() => {
-    console.log("ANSWER: ", answer);
-    console.log("responseRef", responseRef);
+    // console.log("ANSWER: ", answer);
+    // console.log("responseRef", responseRef);
     if (responseMounted && responseRef.current) {
       responseRef.current.setValue(answer);
     }
