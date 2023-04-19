@@ -1,6 +1,6 @@
 function CodeEditors() {
   return (
-    <div className="codeEditors">Here</div>
+    <div className="codeEditors">Time to Skirmish</div>
   )
 }
 export default CodeEditors

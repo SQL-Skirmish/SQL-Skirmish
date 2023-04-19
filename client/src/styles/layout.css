@@ -27,19 +27,19 @@
 }
 
 .prompt {
-  width: 50%;
-  height: 30%;
+  width: 60%;
+  height: 10%;
   position: absolute;
-  right: 5px; 
+  right: 10px; 
   top: 20%;
   background-color: rgba(235, 235, 235, 0.5);
 }
 
 .ER {
-  width: 50%;
-  height: 30%;
+  width: 60%;
+  height: 50%;
   position: absolute;
-  right: 5px; 
-  top: 50%;
+  right: 10px; 
+  top: 33%;
   background-color: rgba(235, 235, 235, 0.5);
 }

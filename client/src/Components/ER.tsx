@@ -1,6 +1,6 @@
 function ER() {
   return (
-    <div className="ER">ER</div>
+    <div className="ER">ER Diagrams</div>
   )
 }
 export default ER;
