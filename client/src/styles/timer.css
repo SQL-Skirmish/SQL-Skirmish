@@ -1,0 +1,18 @@
+
+
+
+.timer {
+  font-size: 200%;
+  background-color: rgba(235, 235, 235, 0.5);
+  color: black;
+  padding: 0.5em;
+  text-align: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 100%;
+  font-weight: 300;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}

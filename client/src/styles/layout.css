@@ -1,0 +1,45 @@
+.container {
+  background-color: rgb(248, 255, 248);
+  font-family: 'Open Sans', sans-serif;
+  border: 2px solid rgb(208, 208, 208);
+  font-weight: 300;
+  margin: auto;
+  width: 70%;
+  height: 35em;
+  position: relative;
+}
+
+.scoreboard {
+  padding: 0.5em;
+  background-color: rgba(235, 235, 235, 0.5);
+  width: 3em;
+  position: relative;
+  margin: auto
+}
+.score {
+  padding: 3px;
+}
+
+.codeEditors {
+  width: 30%;
+  height: 90%;
+  background-color: rgba(235, 235, 235, 0.5);
+}
+
+.prompt {
+  width: 60%;
+  height: 10%;
+  position: absolute;
+  right: 10px; 
+  top: 20%;
+  background-color: rgba(235, 235, 235, 0.5);
+}
+
+.ER {
+  width: 60%;
+  height: 50%;
+  position: absolute;
+  right: 10px; 
+  top: 33%;
+  background-color: rgba(235, 235, 235, 0.5);
+}
