@@ -19,7 +19,7 @@ const Timer = ({ deadline = Date.now() + 30100}) => {
     
     if (time < 1) {
 
-        return (<div className="timer" style={{backgroundColor: 'red'}}>Time is up!</div>) 
+        return (<div className="timer" style={{backgroundColor: 'red', fontSize: '100%'}}>Time is up!</div>) 
     }  
     else {
         return (
@@ -31,7 +31,7 @@ const Timer = ({ deadline = Date.now() + 30100}) => {
                     <div key={label} className="timer">
                         <div className="box">
                             <p>{`${Math.floor(value)}`.padStart(2, "0")}</p>
-                            <span className="text">{label}</span>
+                            {/* <span className="text">{label}</span> */}
                         </div>
                     </div>
                 ))}
