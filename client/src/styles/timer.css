@@ -1,18 +1,20 @@
-
-
-
 .timer {
-  font-size: 200%;
+  /* font-size: 200%; */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: rgba(235, 235, 235, 0.5);
+  background-color: lightgray;
   color: black;
-  padding: 0.5em;
+  padding: 1em;
   text-align: center;
   justify-content: center;
-  width: 4rem;
-  height: 4rem;
+  width: 5rem;
+  height: 5rem;
   border-radius: 100%;
-  font-weight: 300;
-  position: absolute;
-  top: 5px;
-  right: 5px;
+  /* font-weight: 300; */
+  margin-top: 30px;
+  /* top: 5px;
+  right: 5px; */
 }
