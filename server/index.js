@@ -1,9 +1,16 @@
-const express = require("express"),
-  PORT = 3001,
-  app = express();
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
+const express = require('express');
+const passport = require('./auth/passport');
+const routes = require('./routes/auth');
 
-app.get("/api/", (req, res) => {
-  res.send("hi");
-});
+const app = express();
+const PORT = 3001;
 
-app.listen(PORT, () => console.log(`start listening on port : ${PORT}`));
+// Passport middleware
+app.use(passport.initialize());
+
+// Routes middleware
+app.use('/auth', routes);
+
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
