@@ -2,8 +2,8 @@ import React from 'react';
 import userEvent from '@testing-library/user-event';
 import { render, screen, waitFor, cleanup } from '@testing-library/react';
 
-import Timer from "../Components/Timer.tsx";
-import App from "../App.jsx";
+import Timer from "../src/Components/Timer";
+import App from "../src/App.jsx";
 
 describe("<Timer/>", () => {
 
