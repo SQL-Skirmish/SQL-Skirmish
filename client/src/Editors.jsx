@@ -36,7 +36,6 @@ export default function Editors({ player, answer, setWinner }) {
       const response = JSON.stringify(data.response, null, 2);
       responseRef.current.setValue(response);
       if (response === answer) {
-        console.log("WINNER");
         setWinner(player);
       }
     } catch (e) {

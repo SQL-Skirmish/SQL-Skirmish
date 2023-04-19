@@ -8,11 +8,10 @@ import ConfettiExplosion from "react-confetti-explosion";
 function App() {
   const [answer, setAnswer] = useState("");
   const [winner, setWinner] = useState(null);
-  console.log("answer: ", answer);
 
-  useEffect(() => {
-    console.log("winner is: ", winner);
-  }, [winner]);
+  const restartGame = () => {
+    setWinner(null);
+  };
 
   return (
     <main>
@@ -25,7 +24,12 @@ function App() {
             width={"4000"}
             particleSize={50}
           />
-          <div className="winner-modal">Player {winner} wins!</div>
+          <div className="winner-modal">
+            Player {winner} wins!
+            <button onClick={restartGame} className="oki-button">
+              Okie...
+            </button>
+          </div>
         </>
       )}
 
