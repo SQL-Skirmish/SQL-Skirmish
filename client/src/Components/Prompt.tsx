@@ -9,6 +9,7 @@ function Prompt({ setAnswer }) {
       try {
         const { data } = await axios.get("/api/prompt/one");
         setPrompt(data.prompt);
+        console.log("answer operation: ", data.answer);
         const { data: opData } = await axios.post("/api/operation", {
           operation: data.answer.replaceAll('"', "'"),
         });

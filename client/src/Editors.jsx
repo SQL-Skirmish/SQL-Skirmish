@@ -14,7 +14,7 @@ function formatJSON(val = {}) {
   }
 }
 
-export default function Editors({ player }) {
+export default function Editors({ player, answer }) {
   const editorRef = useRef(null);
   const responseRef = useRef(null);
 
@@ -28,8 +28,14 @@ export default function Editors({ player }) {
   const submitOperation = async () => {
     const operation = editorRef.current.getValue();
     try {
-      const { data } = await axios.post("/api/operation", { operation });
-      responseRef.current.setValue(JSON.stringify(data.response, null, 2));
+      const { data } = await axios.post("/api/operation", {
+        operation: operation.replaceAll('"', "'"),
+      });
+      const response = JSON.stringify(data.response, null, 2);
+      responseRef.current.setValue(response);
+      if (response === answer) {
+        console.log("WINNER");
+      }
     } catch (e) {
       console.log("error: ", e);
     }
@@ -45,6 +51,7 @@ export default function Editors({ player }) {
         defaultLanguage="pgsql"
         theme="vs-dark"
         onMount={handleEditorDidMount}
+        options={{ wordWrap: "on" }}
       />
       <button onClick={submitOperation}> Submit </button>
       <h3>Response</h3>

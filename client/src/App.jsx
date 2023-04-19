@@ -10,13 +10,13 @@ function App() {
 
   return (
     <main>
-      <Editors player={1} />
+      <Editors player={1} answer={answer} />
       <section>
         <Timer></Timer>
         <Prompt setAnswer={setAnswer}></Prompt>
         <ExpectedResponse answer={answer}></ExpectedResponse>
       </section>
-      <Editors player={2} />
+      <Editors player={2} answer={answer} />
     </main>
   );
 }
