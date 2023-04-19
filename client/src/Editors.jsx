@@ -16,7 +16,7 @@ function formatJSON(val = {}) {
   }
 }
 
-export default function Editors({ player, answer }) {
+export default function Editors({ player, answer, setWinner }) {
   const editorRef = useRef(null);
   const responseRef = useRef(null);
 
@@ -37,6 +37,7 @@ export default function Editors({ player, answer }) {
       responseRef.current.setValue(response);
       if (response === answer) {
         console.log("WINNER");
+        setWinner(player);
       }
     } catch (e) {
       console.log("error: ", e);

@@ -21,7 +21,7 @@ const Timer = ({ deadline = Date.now() + 30100 }) => {
     return (
       <div
         className="timer"
-        style={{ backgroundColor: "red", fontSize: "100%" }}
+        style={{ backgroundColor: "#ff005b", fontSize: "100%" }}
       >
         Time up!
       </div>

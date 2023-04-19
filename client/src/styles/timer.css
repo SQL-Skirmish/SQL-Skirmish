@@ -4,9 +4,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(235, 235, 235, 0.5);
-  background-color: lightgray;
+  /* background-color: rgba(235, 235, 235, 0.5); */
+  /* background-color: lightgray; */
+  background-color: #e74c7d;
+  /* background-color: #f769a1; */
+  /* background: white; */
   color: black;
+  color: #ffb800;
+  /* opacity: 0.9; */
   padding: 1em;
   text-align: center;
   justify-content: center;
@@ -17,4 +22,7 @@
   margin-top: 30px;
   /* top: 5px;
   right: 5px; */
+  /* opacity: 0.5; */
+  box-shadow: -10px 20px 20px rgba(255, 0, 195, 0.19),
+    -5px 10px 10px rgba(251, 0, 255, 0.23);
 }
