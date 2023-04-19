@@ -11,7 +11,7 @@ function App() {
   return (
     <main>
       <Editors player={1} answer={answer} />
-      <section>
+      <section className="middle-section">
         <Timer></Timer>
         <Prompt setAnswer={setAnswer}></Prompt>
         <ExpectedResponse answer={answer}></ExpectedResponse>

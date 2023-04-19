@@ -23,7 +23,7 @@ const Timer = ({ deadline = Date.now() + 30100 }) => {
         className="timer"
         style={{ backgroundColor: "red", fontSize: "100%" }}
       >
-        Time is up!
+        Time up!
       </div>
     );
   } else {

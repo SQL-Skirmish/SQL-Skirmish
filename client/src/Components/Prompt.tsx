@@ -23,8 +23,8 @@ function Prompt({ setAnswer }) {
 
   return (
     <div className="prompt">
-      <h2>Face Off!</h2>
-      <h3>{prompt}</h3>
+      <h2 className="highlight-text">Round 1!</h2>
+      <h3 className="prompt-text">{prompt}</h3>
     </div>
   );
 }

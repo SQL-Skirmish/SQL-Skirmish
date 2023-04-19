@@ -20,15 +20,17 @@ export default function ExpectedResponse({ answer }) {
 
   return (
     <section>
-      <h2>Expected Response</h2>
-      <Editor
-        height="50vh"
-        width="500px"
-        defaultLanguage="json"
-        theme="vs-dark"
-        onMount={handleResponseDidMount}
-        options={{ readOnly: true }}
-      />
+      <h2 className="highlight-text">Expected Response</h2>
+      <div className="monaco-wrapper">
+        <Editor
+          height="40vh"
+          width="600px"
+          defaultLanguage="json"
+          theme="vs-dark"
+          onMount={handleResponseDidMount}
+          options={{ readOnly: true }}
+        />
+      </div>
     </section>
   );
 }

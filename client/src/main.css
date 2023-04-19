@@ -2,3 +2,99 @@ main {
   display: flex;
   justify-content: space-between;
 }
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: black;
+  color: rgb(0, 255, 30);
+  font-family: "Press Start 2P", cursive;
+  /* font-family: "VT323", monospace; */
+  padding: 0 30px;
+}
+
+.monaco-wrapper {
+  opacity: 0.9;
+  /* opacity: 0.5;
+  filter: brightness(1.5); */
+  position: relative;
+  border: 7px ridge #595959;
+  /* border: 6px ridge white; */
+}
+.player-editor {
+  margin-bottom: 20px;
+}
+.middle-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  padding: 0 70px;
+  /* padding-bottom: 30px; */
+}
+.editors-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* padding: 0 70px; */
+}
+
+.player-avatar {
+  width: 50px;
+  display: inline;
+}
+
+.player-2-avatar {
+  width: 60px;
+}
+
+.editors-section-username {
+  display: inline;
+}
+
+.submit-button {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: "Press Start 2P", cursive;
+  color: rgb(0, 255, 30);
+  background: black;
+  padding: 10px;
+  outline: none;
+  border: 2px solid rgb(0, 255, 30);
+}
+
+.submit-button:active {
+  color: gold;
+}
+
+.prompt-text {
+  line-height: 30px;
+  font-size: 16px;
+}
+.highlight-text-1 {
+  /* color: gold; */
+  color: #83ffb4;
+  color: #e7ff23;
+}
+.highlight-text {
+  color: gold;
+  color: #83ffb4;
+  color: #ff0b73;
+  color: #e7ff23;
+  color: lightgray;
+}
