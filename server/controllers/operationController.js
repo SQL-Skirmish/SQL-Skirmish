@@ -1,3 +1,4 @@
+const db = require("../models/promptModel");
 const operationController = {};
 
 const createErr = (errInfo) => {
@@ -12,10 +13,21 @@ const createErr = (errInfo) => {
   };
 };
 
-operationController.executeOperation = (req, res, next) => {
-  const { operation } = req.body;
-  res.locals.operation = operation;
-  return next();
+operationController.executeOperation = async (req, res, next) => {
+  try {
+    const { operation } = req.body;
+    const response = await db.query(operation);
+    res.locals.response = response.rows;
+    return next();
+  } catch (err) {
+    return next(
+      createErr({
+        method: "executeOperation",
+        type: "errorInCatch",
+        err,
+      })
+    );
+  }
 };
 
 module.exports = operationController;

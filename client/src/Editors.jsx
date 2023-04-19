@@ -2,11 +2,27 @@ import Editor from "@monaco-editor/react";
 import { useRef } from "react";
 import axios from "axios";
 
+function formatJSON(val = {}) {
+  try {
+    const res = JSON.parse(val);
+    return JSON.stringify(res, null, 2);
+  } catch {
+    const errorJson = {
+      error: `${val}`,
+    };
+    return JSON.stringify(errorJson, null, 2);
+  }
+}
+
 export default function Editors({ player }) {
   const editorRef = useRef(null);
+  const responseRef = useRef(null);
 
   const handleEditorDidMount = (editor, monaco) => {
     editorRef.current = editor;
+  };
+  const handleResponseDidMount = (editor, monaco) => {
+    responseRef.current = editor;
   };
 
   const submitOperation = async () => {
@@ -15,6 +31,9 @@ export default function Editors({ player }) {
     try {
       const response = await axios.post("/api/operation", { operation });
       console.log(response);
+      responseRef.current.setValue(
+        JSON.stringify(response.data.response, null, 2)
+      );
     } catch (e) {
       console.log("error: ", e);
     }
@@ -38,6 +57,8 @@ export default function Editors({ player }) {
         width="350px"
         defaultLanguage="json"
         theme="vs-dark"
+        onMount={handleResponseDidMount}
+        options={{ readOnly: true }}
       />
     </section>
   );
