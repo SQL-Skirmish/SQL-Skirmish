@@ -4,7 +4,7 @@ import "../styles/timer.css";
 const SECOND: Number = 1000;
 // const MINUTE = SECOND * 60;
 
-const Timer = ({ deadline = Date.now() + 30100 }) => {
+const Timer = ({ deadline = Date.now() + 45100 }) => {
   const memoizedDeadline = useMemo(() => deadline, [deadline]);
   const [time, setTime] = useState(memoizedDeadline - Date.now());
 
