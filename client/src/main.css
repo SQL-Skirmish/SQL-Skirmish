@@ -16,20 +16,33 @@ html {
 body {
   margin: 0;
   height: 100vh;
-  background: black;
+  /* background: black; */
   color: rgb(0, 255, 30);
   font-family: "Press Start 2P", cursive;
   /* font-family: "VT323", monospace; */
   padding: 0 30px;
+  background-image: url("./images/1.jpeg");
+  background-size: cover;
+  /* text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4); */
+  text-shadow: -4px 4px 0 #260a0a3e;
+
+  /* background-repeat: no-repeat; */
 }
 
 .monaco-wrapper {
-  opacity: 0.9;
+  opacity: 0.7;
   /* opacity: 0.5;
   filter: brightness(1.5); */
   position: relative;
-  border: 7px ridge #595959;
+  border: 2px ridge #595959;
   /* border: 6px ridge white; */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  transition: box-shadow 0.3s ease;
+}
+
+.monaco-wrapper:hover {
+  box-shadow: 0 18px 28px rgba(132, 0, 134, 0.28),
+    0 10px 10px rgba(146, 0, 73, 0.3);
 }
 .player-editor {
   margin-bottom: 20px;
@@ -65,7 +78,8 @@ body {
   display: inline;
 }
 
-.submit-button {
+.submit-button,
+.oki-button {
   position: absolute;
   bottom: 10px;
   left: 50%;
@@ -78,7 +92,8 @@ body {
   border: 2px solid rgb(0, 255, 30);
 }
 
-.submit-button:active {
+.submit-button:active,
+.oki-button:active {
   color: gold;
 }
 
@@ -90,6 +105,7 @@ body {
   /* color: gold; */
   color: #83ffb4;
   color: #e7ff23;
+  text-shadow: -4px 3px 0 #ff0000;
 }
 .highlight-text {
   color: gold;
@@ -97,4 +113,26 @@ body {
   color: #ff0b73;
   color: #e7ff23;
   color: lightgray;
+  color: white;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9,
+    0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1),
+    0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2),
+    0 20px 20px rgba(0, 0, 0, 0.15);
+}
+
+.winner-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #000000c2;
+
+  padding: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  z-index: 30000;
+  white-space: nowrap;
 }
